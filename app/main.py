@@ -9,7 +9,8 @@ def prompt():
 
 def get_commands():
     return {
-        "exit": exit   
+        "exit": exit,
+        "echo": echo
     }
 
 def exit(num):
@@ -20,6 +21,10 @@ def exit(num):
         sys.exit(255)
     
     sys.exit(int(code))
+
+def echo(args):
+    msg = " ".join(args)
+    print(msg)
 
 def main():
     # Wait for user input
