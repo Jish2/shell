@@ -7,7 +7,13 @@ def main():
     sys.stdout.flush()
 
     # Wait for user input
-    input()
+    command = input()
+
+    commands = []
+
+    if command not in commands:
+        print(f"{command}: command not found")
+        sys.exit(1)
 
 
 if __name__ == "__main__":
