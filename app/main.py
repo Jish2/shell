@@ -9,11 +9,12 @@ def prompt():
 
 def get_commands():
     return {
-        "exit": exit,
-        "echo": echo
+        "exit": exit_cmd,
+        "echo": echo_cmd,
+        "type": type_cmd,
     }
 
-def exit(num):
+def exit_cmd(num):
     code = num[0]
     # check if string is number
     if not code.isdigit():
@@ -22,9 +23,18 @@ def exit(num):
     
     sys.exit(int(code))
 
-def echo(args):
+def echo_cmd(args):
     msg = " ".join(args)
     print(msg)
+
+def type_cmd(args):
+    cmd = args[0]
+    commands = get_commands()
+    
+    if cmd in commands:
+        print(f"{cmd} is a shell builtin")
+    else:
+        print(f"{cmd} nonexistent")
 
 def main():
     # Wait for user input
