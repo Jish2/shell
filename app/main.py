@@ -34,7 +34,7 @@ def type_cmd(args):
     if cmd in commands:
         print(f"{cmd} is a shell builtin")
     else:
-        print(f"{cmd} nonexistent")
+        print(f"{cmd}: not found")
 
 def main():
     # Wait for user input
